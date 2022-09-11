@@ -16,11 +16,10 @@ MULTIPLY = 'MUL'
 DIVIDE = 'DIV'
 LPAREN = 'LPAREN'
 RPAREN = 'RPAREN'
-
 INTEGER = 'INTEGER'
 FLOAT = 'FLOAT'
-
 DIGITS = '0123456789'
+
 
 class NumberNode:
     def __init__(self, token):
@@ -28,6 +27,7 @@ class NumberNode:
 
     def __repr__(self):
         return str(self.token.value)
+
 
 class BinaryOperation:
     def __init__(self, left, operator, right):
@@ -38,6 +38,7 @@ class BinaryOperation:
     def __repr__(self):
         return '({}, {}, {})'.format(self.left, self.operator, self.right)
 
+
 class UnaryOperation:
     def __init__(self, operator, right):
         self.operator = operator
@@ -45,6 +46,7 @@ class UnaryOperation:
 
     def __repr__(self):
         return '({} {})'.format(self.operator, self.right)
+
 
 class Token:
     def __init__(self, value, type) -> None:
@@ -55,6 +57,7 @@ class Token:
         if self.type not in [INTEGER, FLOAT]:
             return f'{self.type}'
         return f'{self.type}:{self.value}'
+    
 
 class Lexer:
     def __init__(self, expression):
@@ -103,6 +106,7 @@ class Lexer:
                 self.advance()
 
         return self.tokens
+    
 
 class Parser:
     def __init__(self, tokens) -> None:
@@ -155,6 +159,7 @@ class Parser:
             left = BinaryOperation(left, op, right)
 
         return left
+    
 
 class Number:
     def __init__(self, value):
@@ -178,6 +183,7 @@ class Number:
     
     def __repr__(self) -> str:
         return str(self.value)
+    
 
 class Interpreter:
     
@@ -217,6 +223,7 @@ class Interpreter:
             return left.divided_by(right)
         else:
             raise Exception(f'Unknown operator {node.operator.type}')
+
 
 def calc(expression):
     lexer = Lexer(expression)
