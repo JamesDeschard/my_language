@@ -1,15 +1,3 @@
-"""
-
-The objective of this project is to create a simple calculator that can evaluate expressions like 1 + 2 * 3 or (1 + 2) * 3.
-The particularity is that the calculator evaluates the expression from a string. 
-It uses a lexer to evaluate the expression and tokenize it (Lexer class).
-It then uses a parser to parse the tokens and create an abstract syntax tree (Parser class).
-And finally, it uses an interpreter to evaluate the abstract syntax tree (Interpreter class).
-Cheers,
-
-"""
-
-
 PLUS = 'PLUS'
 MINUS = 'MINUS'
 MULTIPLY = 'MUL'
