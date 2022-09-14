@@ -216,10 +216,15 @@ class Interpreter:
 def calc(expression):
     lexer = Lexer(expression)
     result = lexer.get_tokens()
+    print(result)
 
     parser = Parser(result)
     result = parser.parse()
+    print(result)
 
     interpreter = Interpreter()
     result = interpreter.visit(result)
     return result.value
+
+if __name__ == '__main__':
+    print(calc('(1 + 2) * 3'))
