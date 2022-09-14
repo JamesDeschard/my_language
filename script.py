@@ -1,3 +1,9 @@
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger('LANGUAGE')
+
+
 PLUS = 'PLUS'
 MINUS = 'MINUS'
 MULTIPLY = 'MUL'
@@ -216,11 +222,11 @@ class Interpreter:
 def calc(expression):
     lexer = Lexer(expression)
     result = lexer.get_tokens()
-    print(result)
+    logger.info(f'Lexerised result: {result}')
 
     parser = Parser(result)
     result = parser.parse()
-    print(result)
+    logger.info(f'Parsed result: {result}')
 
     interpreter = Interpreter()
     result = interpreter.visit(result)
