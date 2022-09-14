@@ -46,6 +46,6 @@ An interpreter is a kind of program that executes other programs. When you write
 
 ```python
  print(calc('(1 + 2) * 3'))
- 
- #returns 9
+
+ # Returns 9
 ``` 

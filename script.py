@@ -226,5 +226,7 @@ def calc(expression):
     result = interpreter.visit(result)
     return result.value
 
+
 if __name__ == '__main__':
-    print(calc('(1 + 2) * 3'))
+    # Execute your operations here
+    pass
